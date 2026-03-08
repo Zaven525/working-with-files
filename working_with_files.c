@@ -19,13 +19,12 @@ int main()
 		printf("%d: %s", n++, buffer);
 	}
 
-	
 	fseek(file, 0, SEEK_SET); // start of file
 	printf("%ld \n", ftell(file));
 	fgets(buffer, 100, file);
 	printf("%s \n", buffer);
 	printf("%ld \n", ftell(file));
 	
-	
+	fclose(file);
 	return 0;
 }

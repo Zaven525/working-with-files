@@ -18,6 +18,9 @@ int main()
             fputs(buffer, writing);
         }
     }
+    
+    fclose(reading);
+    fclode(writing);
 
     return 0;
 }

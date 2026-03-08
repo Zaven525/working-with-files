@@ -58,6 +58,8 @@ int main(int argc, char* argv[])
     FILE* output = fopen("output.txt", "w");
     if (l_file && r_file) File_comparison_function(l_file, r_file, output);
 
-
+    fclose(l_file);
+    fclose(r_file);
+    fclose(output);
     return 0;
 }
