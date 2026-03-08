@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
+
 void File_comparison_function(FILE* l_file, FILE* r_file, FILE* output)
 {
     char l_buffer[100];
@@ -44,12 +46,18 @@ void File_comparison_function(FILE* l_file, FILE* r_file, FILE* output)
 
 int main(int argc, char* argv[])
 {
+    if (argc != 3)
+    {
+        printf("Usage: %s file1 file2\n", argv[0]);
+        return 1;
+    }
+
     FILE* l_file = fopen(argv[1], "r");
     FILE* r_file = fopen(argv[2], "r");
     
     FILE* output = fopen("output.txt", "w");
-    
     if (l_file && r_file) File_comparison_function(l_file, r_file, output);
+
 
     return 0;
 }

@@ -1,0 +1,7 @@
+Hello
+Apple
+Orange
+Banana
+Cat
+Dog
+Finish
